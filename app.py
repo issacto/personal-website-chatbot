@@ -1,17 +1,13 @@
 import time
 from flask import Flask, render_template, Response, request
 import cv2
+import os
 from chatterbot import ChatBot
 from chatterbot.trainers import ChatterBotCorpusTrainer
 from chatterbot.trainers import ListTrainer
-import os
+
 import numpy as np
-import cv2
 import base64
-import sys
-from PIL import Image
-import io 
-import re
 import json
 from secrets import secrets
 
@@ -23,12 +19,14 @@ from keras.preprocessing.image import img_to_array
 tempModel = open("model.json", "r").read()
 model = model_from_json(tempModel)
 model.load_weights('model.h5')
+
 face_haar_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
 
 
 
 
 #Training BankBot
+
 bot = ChatBot("Toto",logic_adapters=[
         {
             'import_path': 'chatterbot.logic.BestMatch',
@@ -37,6 +35,7 @@ bot = ChatBot("Toto",logic_adapters=[
         }])
 trainer = ListTrainer(bot)
 trainer.train(secrets)
+
 
 app = Flask(__name__, static_folder='/client/build', static_url_path='/')
 
@@ -47,7 +46,7 @@ def index():
 @app.route('/getMessage', methods=['GET'])
 def get_bot_response():
     userText = request.args.get('message')
-    botReply = str(bot.get_response(userText))
+    botReply = str(bot.get_response('default_response'))
     if botReply is "default_value":
         botReply = str(bot.get_response('default_response'))
     if(botReply =="Opening Personal Website"):
@@ -87,30 +86,22 @@ def getSelfie():
 
     max_index = 6
     if(type(image_pixels) != int):
-        predictions = model.predict(image_pixels)
-        max_index = np.argmax(predictions[0])
+        #predictions = model.predict(image_pixels)
+        #max_index = np.argmax(predictions[0])
+        max_index=1
     
     emotion_detection = ('angry', 'disgust', 'fear', 'happy', 'sad', 'surprise', 'neutral')
     emotion_prediction = emotion_detection[max_index]
     #print(emotion_prediction, file=sys.stdout)
-    #emotion_prediction=1
+    #emotion_prediction=emotion_prediction
     return {'message': emotion_prediction}
 
 
 
-'''
-greet_conversation = [
-    "Hello",
-    "Hi there!",
-    "How are you doing?",
-    "I'm doing great.",
-    "That is good to hear",
-    "Thank you.",
-    "You're welcome."
-]'''
 
 
 
 
 if __name__ == '__main__':
-    app.run()
+     port = int(os.environ.get('PORT', 5000))
+     app.run(host='0.0.0.0', port=port)

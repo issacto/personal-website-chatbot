@@ -1,7 +1,7 @@
 # Toto-the-chatbot
 
 <p align="center">
-    <img alt="Chatbot" src="./src/components/images/emoji/png/smart.png"  width="90" />
+    <img alt="Chatbot" src="./client/src/components/images/emoji/png/smart.png"  width="90" />
 </p>
 <h2 align="center">
   Ask Toto to learn more about the author!
@@ -34,20 +34,24 @@ secrets = [
     "I am Toto...",
 ] 
 ```
-3. Backend: Create a virtual environment inside API
+3. Backend: Install pip and node packages
 ``` javascript
-cd api
 python3 -m venv env
 //pip install missing packages 
 ```
-
-4. Frontend:
 ``` javascript
-
+cd client
 npm install
-npm run dev
-
+npm run build
 ```
 
+4. Run:
+``` javascript
+gunicorn app:app
+```
 
 5. Use Chrome to run the website (some packages dont work well with Safari)
+
+6. Failure to deploy on Heroku
+* Heroku free deployment memory is only 500MB.
+* Machine learning model takes around 130MB, NPM Build (Packages) takes around 200MB, Pip packages takes another 200MB (+other runtime storage). Therefore, it is impossible to deploy it freely on heroku.

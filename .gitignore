@@ -2,7 +2,7 @@
 notes.txt
 api/db.sqlite3
 venv/
-secrets.py
+/model.h5
 model.h5
 __pycache__
 /note.txt
@@ -10,7 +10,7 @@ __pycache__
 /client/node_modules
 /.pnp
 .pnp.js
-
+/client/build1
 # testing
 /coverage
 

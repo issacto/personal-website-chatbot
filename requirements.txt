@@ -1,6 +1,8 @@
-opencv_contrib_python==4.2.0.34
+opencv-python-headless==4.2.0.32
 Flask==1.1.2
 numpy==1.18.2
-chatterbot==1.0.8
 keras==2.4.3
 Pillow==8.1.2
+gunicorn
+tensorflow-cpu
+h5py < 3.0.0
