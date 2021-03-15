@@ -1,5 +1,0 @@
-"proxy": "http://localhost:5000",
-
-.flask env
-FLASK_APP=api.py
-FLASK_ENV=development
