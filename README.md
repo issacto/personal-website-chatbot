@@ -4,7 +4,7 @@
     <img alt="Chatbot" src="./client/src/components/images/emoji/png/smart.png"  width="90" />
 </p>
 <h2 align="center">
-  Ask Toto to learn more about the author!
+  Make your own chatbot with audio input
 </h2>
 
 <hr/>
