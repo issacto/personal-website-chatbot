@@ -46,7 +46,7 @@ gunicorn app:app
 
 5. Use Chrome to run the website (some packages dont work well with Safari)
 
-6. Failure to deploy on Heroku
+### Fail to deploy on Heroku
 * Heroku free deployment memory is only 500MB.
 * Machine learning model takes around 130MB, NPM Build takes and pip packages take another 200MB (+other runtime storage). Therefore, it is impossible to deploy it freely on heroku.
 
