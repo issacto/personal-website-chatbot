@@ -1,11 +1,5 @@
-# Toto-the-chatbot
-
-<p align="center">
-    <img alt="Chatbot" src="./client/src/components/images/emoji/png/smart.png"  width="90" />
-</p>
-<h2 align="center">
-  Make your own chatbot with audio input
-</h2>
+# Personal-website-chatbot
+About: To serve as my personal website chatbot 
 
 <hr/>
  
