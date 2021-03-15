@@ -19,7 +19,7 @@ About: To serve as my personal website chatbot
 
 
 1. Train a DNN Sentiment Analysis 
-* link:
+* link: https://analyticsindiamag.com/my-first-cnn-project-emotion-detection-using-convolutional-neural-network-with-tpu/ 
 
 2. Create your chatterbot secret file
 ``` python
@@ -52,4 +52,3 @@ gunicorn app:app
 
 
 
-Reference: https://analyticsindiamag.com/my-first-cnn-project-emotion-detection-using-convolutional-neural-network-with-tpu/ 
