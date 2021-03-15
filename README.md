@@ -49,3 +49,7 @@ gunicorn app:app
 6. Failure to deploy on Heroku
 * Heroku free deployment memory is only 500MB.
 * Machine learning model takes around 130MB, NPM Build (Packages) takes around 200MB, Pip packages takes another 200MB (+other runtime storage). Therefore, it is impossible to deploy it freely on heroku.
+
+
+
+Reference: https://analyticsindiamag.com/my-first-cnn-project-emotion-detection-using-convolutional-neural-network-with-tpu/ 
