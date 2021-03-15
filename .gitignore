@@ -10,7 +10,7 @@ __pycache__
 /client/node_modules
 /.pnp
 .pnp.js
-/client/build1
+/client/build
 # testing
 /coverage
 
