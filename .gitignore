@@ -30,4 +30,5 @@ yarn-error.log*
 
 /note.txt
 note.txt
-secrets.py
+secrets1.py
+/secrets1.py
