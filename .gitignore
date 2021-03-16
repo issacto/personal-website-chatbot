@@ -30,5 +30,5 @@ yarn-error.log*
 
 /note.txt
 note.txt
-secrets1.py
-/secrets1.py
+secrets.py
+/secrets.py
